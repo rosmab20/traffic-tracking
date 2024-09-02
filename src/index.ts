@@ -5,6 +5,7 @@ import router from '@/routes/routes';
 import cookieParser from 'cookie-parser';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
+import { SocketController } from './controllers/socket.controller';
 
 const app = express();
 const server = createServer(app);
@@ -32,6 +33,8 @@ app.use(router);
 app.use('*', (_req, res) => {
   res.status(404).json({ status: 404, message: '❌ Route not found!', data: null });
 });
+
+SocketController.startTrafficRecord();
 
 io.on('connection', (socket) => {
   console.log('a user connected');
