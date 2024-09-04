@@ -12,88 +12,88 @@ export class TrafficService {
   private countPKW = 0;
 
   private currentTrafficDataKZD: TrafficDatas = {
-    typ: 0,
-    abfrageintervall: this.KZD,
-    abfragezeitpunktstart: '',
-    abfragezeitpunktende: '',
+    type: 0,
+    queryInterval: this.KZD,
+    queryStartTime: '',
+    queryEndTime: '',
     KRAD: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     PKW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LFW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     PKWA: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LKWA: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LKW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     SATTEL: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     BUS: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     SONST: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
   };
 
   private currentTrafficDataLZD: TrafficDatas = {
-    typ: 1,
-    abfrageintervall: this.LZD,
-    abfragezeitpunktstart: '',
-    abfragezeitpunktende: '',
+    type: 1,
+    queryInterval: this.LZD,
+    queryStartTime: '',
+    queryEndTime: '',
     KRAD: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     PKW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LFW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     PKWA: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LKWA: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     LKW: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     SATTEL: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     BUS: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
     SONST: {
-      anzahl: 0,
-      durchschnittsgeschwindigkeit: 0,
+      amount: 0,
+      averageSpeed: 0,
     },
   };
 
@@ -110,54 +110,54 @@ export class TrafficService {
   }
 
   private initTrafficDataKZD() {
-    this.currentTrafficDataKZD.abfragezeitpunktstart = new Date().toISOString();
-    this.currentTrafficDataKZD.typ = 0;
-    this.currentTrafficDataKZD.PKW.anzahl = 0;
-    this.currentTrafficDataKZD.KRAD.anzahl = 0;
-    this.currentTrafficDataKZD.LFW.anzahl = 0;
-    this.currentTrafficDataKZD.PKWA.anzahl = 0;
-    this.currentTrafficDataKZD.LKWA.anzahl = 0;
-    this.currentTrafficDataKZD.LKW.anzahl = 0;
-    this.currentTrafficDataKZD.SATTEL.anzahl = 0;
-    this.currentTrafficDataKZD.BUS.anzahl = 0;
-    this.currentTrafficDataKZD.SONST.anzahl = 0;
-    this.currentTrafficDataKZD.PKW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.KRAD.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.LFW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.PKWA.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.LKWA.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.LKW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.SATTEL.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.BUS.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataKZD.SONST.durchschnittsgeschwindigkeit = 0;
+    this.currentTrafficDataKZD.queryStartTime = new Date().toISOString();
+    this.currentTrafficDataKZD.type = 0;
+    this.currentTrafficDataKZD.PKW.amount = 0;
+    this.currentTrafficDataKZD.KRAD.amount = 0;
+    this.currentTrafficDataKZD.LFW.amount = 0;
+    this.currentTrafficDataKZD.PKWA.amount = 0;
+    this.currentTrafficDataKZD.LKWA.amount = 0;
+    this.currentTrafficDataKZD.LKW.amount = 0;
+    this.currentTrafficDataKZD.SATTEL.amount = 0;
+    this.currentTrafficDataKZD.BUS.amount = 0;
+    this.currentTrafficDataKZD.SONST.amount = 0;
+    this.currentTrafficDataKZD.PKW.averageSpeed = 0;
+    this.currentTrafficDataKZD.KRAD.averageSpeed = 0;
+    this.currentTrafficDataKZD.LFW.averageSpeed = 0;
+    this.currentTrafficDataKZD.PKWA.averageSpeed = 0;
+    this.currentTrafficDataKZD.LKWA.averageSpeed = 0;
+    this.currentTrafficDataKZD.LKW.averageSpeed = 0;
+    this.currentTrafficDataKZD.SATTEL.averageSpeed = 0;
+    this.currentTrafficDataKZD.BUS.averageSpeed = 0;
+    this.currentTrafficDataKZD.SONST.averageSpeed = 0;
   }
 
   private initTrafficDataLZD() {
-    this.currentTrafficDataLZD.abfragezeitpunktstart = new Date().toISOString();
-    this.currentTrafficDataLZD.typ = 1;
-    this.currentTrafficDataLZD.PKW.anzahl = 0;
-    this.currentTrafficDataLZD.KRAD.anzahl = 0;
-    this.currentTrafficDataLZD.LFW.anzahl = 0;
-    this.currentTrafficDataLZD.PKWA.anzahl = 0;
-    this.currentTrafficDataLZD.LKWA.anzahl = 0;
-    this.currentTrafficDataLZD.LKW.anzahl = 0;
-    this.currentTrafficDataLZD.SATTEL.anzahl = 0;
-    this.currentTrafficDataLZD.BUS.anzahl = 0;
-    this.currentTrafficDataLZD.SONST.anzahl = 0;
-    this.currentTrafficDataLZD.PKW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.KRAD.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.LFW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.PKWA.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.LKWA.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.LKW.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.SATTEL.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.BUS.durchschnittsgeschwindigkeit = 0;
-    this.currentTrafficDataLZD.SONST.durchschnittsgeschwindigkeit = 0;
+    this.currentTrafficDataLZD.queryStartTime = new Date().toISOString();
+    this.currentTrafficDataLZD.type = 1;
+    this.currentTrafficDataLZD.PKW.amount = 0;
+    this.currentTrafficDataLZD.KRAD.amount = 0;
+    this.currentTrafficDataLZD.LFW.amount = 0;
+    this.currentTrafficDataLZD.PKWA.amount = 0;
+    this.currentTrafficDataLZD.LKWA.amount = 0;
+    this.currentTrafficDataLZD.LKW.amount = 0;
+    this.currentTrafficDataLZD.SATTEL.amount = 0;
+    this.currentTrafficDataLZD.BUS.amount = 0;
+    this.currentTrafficDataLZD.SONST.amount = 0;
+    this.currentTrafficDataLZD.PKW.averageSpeed = 0;
+    this.currentTrafficDataLZD.KRAD.averageSpeed = 0;
+    this.currentTrafficDataLZD.LFW.averageSpeed = 0;
+    this.currentTrafficDataLZD.PKWA.averageSpeed = 0;
+    this.currentTrafficDataLZD.LKWA.averageSpeed = 0;
+    this.currentTrafficDataLZD.LKW.averageSpeed = 0;
+    this.currentTrafficDataLZD.SATTEL.averageSpeed = 0;
+    this.currentTrafficDataLZD.BUS.averageSpeed = 0;
+    this.currentTrafficDataLZD.SONST.averageSpeed = 0;
   }
 
   private connectToSocketIO() {
     if (!this.socketClient) {
-      this.socketClient = io('http://36835.hostserv.eu:3002', {
+      this.socketClient = io('http://36835.hostserv.eu:3004', {
         reconnection: true,
       });
 
@@ -219,7 +219,7 @@ export class TrafficService {
 
     const intervallKZD = () => {
       setTimeout(() => {
-        this.currentTrafficDataKZD.abfragezeitpunktende = new Date().toISOString();
+        this.currentTrafficDataKZD.queryEndTime = new Date().toISOString();
         console.log('Traffic:', this.currentTrafficDataKZD);
         this.socketClient?.emit('traffic', this.countPKW);
         this.socketClient?.emit('traffic', this.currentTrafficDataKZD);
@@ -231,7 +231,7 @@ export class TrafficService {
 
     const intervallLZD = () => {
       setTimeout(() => {
-        this.currentTrafficDataLZD.abfragezeitpunktende = new Date().toISOString();
+        this.currentTrafficDataLZD.queryEndTime = new Date().toISOString();
         console.log('Traffic:', this.currentTrafficDataLZD);
         this.socketClient?.emit('traffic', this.currentTrafficDataLZD);
         this.initTrafficDataLZD();
@@ -245,103 +245,103 @@ export class TrafficService {
       setTimeout(() => {
         let vehicleNumber = this.randomVehicle();
         if (vehicleNumber <= 50) {
-          this.currentTrafficDataKZD.PKW.anzahl++;
-          this.currentTrafficDataKZD.PKW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.PKW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.PKW.anzahl
+          this.currentTrafficDataKZD.PKW.amount++;
+          this.currentTrafficDataKZD.PKW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.PKW.averageSpeed,
+            this.currentTrafficDataKZD.PKW.amount
           );
-          this.currentTrafficDataLZD.PKW.anzahl++;
-          this.currentTrafficDataLZD.PKW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.PKW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.PKW.anzahl
+          this.currentTrafficDataLZD.PKW.amount++;
+          this.currentTrafficDataLZD.PKW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.PKW.averageSpeed,
+            this.currentTrafficDataLZD.PKW.amount
           );
         } else if (vehicleNumber <= 60) {
-          this.currentTrafficDataKZD.KRAD.anzahl++;
-          this.currentTrafficDataKZD.KRAD.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.KRAD.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.KRAD.anzahl
+          this.currentTrafficDataKZD.KRAD.amount++;
+          this.currentTrafficDataKZD.KRAD.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.KRAD.averageSpeed,
+            this.currentTrafficDataKZD.KRAD.amount
           );
-          this.currentTrafficDataLZD.KRAD.anzahl++;
-          this.currentTrafficDataLZD.KRAD.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.KRAD.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.KRAD.anzahl
+          this.currentTrafficDataLZD.KRAD.amount++;
+          this.currentTrafficDataLZD.KRAD.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.KRAD.averageSpeed,
+            this.currentTrafficDataLZD.KRAD.amount
           );
         } else if (vehicleNumber <= 70) {
-          this.currentTrafficDataKZD.LFW.anzahl++;
-          this.currentTrafficDataKZD.LFW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.LFW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.LFW.anzahl
+          this.currentTrafficDataKZD.LFW.amount++;
+          this.currentTrafficDataKZD.LFW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.LFW.averageSpeed,
+            this.currentTrafficDataKZD.LFW.amount
           );
-          this.currentTrafficDataLZD.LFW.anzahl++;
-          this.currentTrafficDataLZD.LFW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.LFW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.LFW.anzahl
+          this.currentTrafficDataLZD.LFW.amount++;
+          this.currentTrafficDataLZD.LFW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.LFW.averageSpeed,
+            this.currentTrafficDataLZD.LFW.amount
           );
         } else if (vehicleNumber <= 80) {
-          this.currentTrafficDataKZD.PKWA.anzahl++;
-          this.currentTrafficDataKZD.PKWA.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.PKWA.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.PKWA.anzahl
+          this.currentTrafficDataKZD.PKWA.amount++;
+          this.currentTrafficDataKZD.PKWA.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.PKWA.averageSpeed,
+            this.currentTrafficDataKZD.PKWA.amount
           );
-          this.currentTrafficDataLZD.PKWA.anzahl++;
-          this.currentTrafficDataLZD.PKWA.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.PKWA.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.PKWA.anzahl
+          this.currentTrafficDataLZD.PKWA.amount++;
+          this.currentTrafficDataLZD.PKWA.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.PKWA.averageSpeed,
+            this.currentTrafficDataLZD.PKWA.amount
           );
         } else if (vehicleNumber <= 85) {
-          this.currentTrafficDataKZD.LKWA.anzahl++;
-          this.currentTrafficDataKZD.LKWA.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.LKWA.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.LKWA.anzahl
+          this.currentTrafficDataKZD.LKWA.amount++;
+          this.currentTrafficDataKZD.LKWA.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.LKWA.averageSpeed,
+            this.currentTrafficDataKZD.LKWA.amount
           );
-          this.currentTrafficDataLZD.LKWA.anzahl++;
-          this.currentTrafficDataLZD.LKWA.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.LKWA.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.LKWA.anzahl
+          this.currentTrafficDataLZD.LKWA.amount++;
+          this.currentTrafficDataLZD.LKWA.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.LKWA.averageSpeed,
+            this.currentTrafficDataLZD.LKWA.amount
           );
         } else if (vehicleNumber <= 90) {
-          this.currentTrafficDataKZD.LKW.anzahl++;
-          this.currentTrafficDataKZD.LKW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.LKW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.LKW.anzahl
+          this.currentTrafficDataKZD.LKW.amount++;
+          this.currentTrafficDataKZD.LKW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.LKW.averageSpeed,
+            this.currentTrafficDataKZD.LKW.amount
           );
-          this.currentTrafficDataLZD.LKW.anzahl++;
-          this.currentTrafficDataLZD.LKW.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.LKW.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.LKW.anzahl
+          this.currentTrafficDataLZD.LKW.amount++;
+          this.currentTrafficDataLZD.LKW.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.LKW.averageSpeed,
+            this.currentTrafficDataLZD.LKW.amount
           );
         } else if (vehicleNumber <= 95) {
-          this.currentTrafficDataKZD.SATTEL.anzahl++;
-          this.currentTrafficDataKZD.SATTEL.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.SATTEL.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.SATTEL.anzahl
+          this.currentTrafficDataKZD.SATTEL.amount++;
+          this.currentTrafficDataKZD.SATTEL.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.SATTEL.averageSpeed,
+            this.currentTrafficDataKZD.SATTEL.amount
           );
-          this.currentTrafficDataLZD.SATTEL.anzahl++;
-          this.currentTrafficDataLZD.SATTEL.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.SATTEL.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.SATTEL.anzahl
+          this.currentTrafficDataLZD.SATTEL.amount++;
+          this.currentTrafficDataLZD.SATTEL.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.SATTEL.averageSpeed,
+            this.currentTrafficDataLZD.SATTEL.amount
           );
         } else if (vehicleNumber <= 98) {
-          this.currentTrafficDataKZD.BUS.anzahl++;
-          this.currentTrafficDataKZD.BUS.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.BUS.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.BUS.anzahl
+          this.currentTrafficDataKZD.BUS.amount++;
+          this.currentTrafficDataKZD.BUS.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.BUS.averageSpeed,
+            this.currentTrafficDataKZD.BUS.amount
           );
-          this.currentTrafficDataLZD.BUS.anzahl++;
-          this.currentTrafficDataLZD.BUS.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.BUS.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.BUS.anzahl
+          this.currentTrafficDataLZD.BUS.amount++;
+          this.currentTrafficDataLZD.BUS.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.BUS.averageSpeed,
+            this.currentTrafficDataLZD.BUS.amount
           );
         } else {
-          this.currentTrafficDataKZD.SONST.anzahl++;
-          this.currentTrafficDataKZD.SONST.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataKZD.SONST.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataKZD.SONST.anzahl
+          this.currentTrafficDataKZD.SONST.amount++;
+          this.currentTrafficDataKZD.SONST.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataKZD.SONST.averageSpeed,
+            this.currentTrafficDataKZD.SONST.amount
           );
-          this.currentTrafficDataLZD.SONST.anzahl++;
-          this.currentTrafficDataLZD.SONST.durchschnittsgeschwindigkeit = this.updateAverageSpeed(
-            this.currentTrafficDataLZD.SONST.durchschnittsgeschwindigkeit,
-            this.currentTrafficDataLZD.SONST.anzahl
+          this.currentTrafficDataLZD.SONST.amount++;
+          this.currentTrafficDataLZD.SONST.averageSpeed = this.updateAverageSpeed(
+            this.currentTrafficDataLZD.SONST.averageSpeed,
+            this.currentTrafficDataLZD.SONST.amount
           );
         }
         update();
@@ -353,7 +353,7 @@ export class TrafficService {
   private sendSingleTrafficData() {
     let trafficData: TrafficData = {
       timestamp: new Date().toISOString(),
-      typ: 0,
+      type: 0,
       speed: Math.random() * (100 - 20) + 20,
       length: Math.random() * (100 - 20) + 20,
     };
