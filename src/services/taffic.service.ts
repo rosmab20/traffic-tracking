@@ -10,6 +10,8 @@ export class TrafficService {
   private KZD = 10000;
   private LZD = 100000;
   private countPKW = 0;
+  private useLZD = true;
+  private useKZD = true;
 
   private currentTrafficDataKZD: TrafficDatas = {
     type: 0,
@@ -224,8 +226,9 @@ export class TrafficService {
       setTimeout(() => {
         this.currentTrafficDataKZD.queryEndTime = new Date().toISOString();
         console.log('Traffic:', this.currentTrafficDataKZD);
-        this.socketClient?.emit('traffic', this.countPKW);
-        this.socketClient?.emit('traffic', this.currentTrafficDataKZD);
+        if (this.useKZD) {
+          this.socketClient?.emit('traffic', this.currentTrafficDataKZD);
+        }
         this.initTrafficDataKZD();
         intervallKZD();
       }, this.KZD);
@@ -236,7 +239,9 @@ export class TrafficService {
       setTimeout(() => {
         this.currentTrafficDataLZD.queryEndTime = new Date().toISOString();
         console.log('Traffic:', this.currentTrafficDataLZD);
-        this.socketClient?.emit('traffic', this.currentTrafficDataLZD);
+        if (this.useLZD) {
+          this.socketClient?.emit('traffic', this.currentTrafficDataLZD);
+        }
         this.initTrafficDataLZD();
         intervallLZD();
       }, this.LZD);
@@ -246,26 +251,21 @@ export class TrafficService {
     const update = () => {
       const randomTime = Math.floor(Math.random() * 5000) + 100;
       const randomEvent = Math.floor(Math.random() * 100) + 1;
-      if (randomEvent <= 5) {
+
+      if (randomEvent <= 20) {
         this.trafficJam();
-      } else if (randomEvent <= 10) {
-        this.stopTrafficJam();
-      } else if (randomEvent <= 15) {
+      } else if (randomEvent <= 35) {
         this.ghostDriver();
-      } else if (randomEvent <= 20) {
-        this.stopGhostDriver();
-      } else if (randomEvent <= 25) {
+      } else if (randomEvent <= 50) {
         this.fault();
-      } else if (randomEvent <= 30) {
-        this.sendSingleTrafficData();
-      }
-      if (randomEvent > 50) {
+      } else if (randomEvent > 50) {
         this.stopGhostDriver();
         this.stopTrafficJam();
         this.stopFault();
       }
       setTimeout(() => {
         let vehicleNumber = this.randomVehicle();
+        this.sendSingleTrafficData();
         if (vehicleNumber <= 50) {
           this.currentTrafficDataKZD.PKW.amount++;
           this.currentTrafficDataKZD.PKW.averageSpeed = this.updateAverageSpeed(
@@ -374,8 +374,8 @@ export class TrafficService {
 
   private sendSingleTrafficData() {
     let trafficData: TrafficData = {
-      timestamp: new Date().toISOString(),
-      type: 0,
+      timestamp: new Date(),
+      type: Math.floor(Math.random() * 10) + 1,
       speed: Math.random() * (100 - 20) + 20,
       length: Math.random() * (100 - 20) + 20,
     };

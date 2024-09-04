@@ -1,6 +1,6 @@
 export interface TrafficData {
-    timestamp: string,
-    type: number,
-    speed: number,
-    length: number,
+  timestamp: any;
+  type: number;
+  speed: number;
+  length: number;
 }
