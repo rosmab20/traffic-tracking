@@ -195,6 +195,9 @@ export class TrafficService {
     this.socketClient?.emit('fault', 1);
   }
 
+  private stopFault() {
+    this.socketClient?.emit('fault', 0);
+  }
   public start() {
     console.log('Start Traffic Service');
     this.trafficUpdate();
@@ -242,6 +245,25 @@ export class TrafficService {
 
     const update = () => {
       const randomTime = Math.floor(Math.random() * 5000) + 100;
+      const randomEvent = Math.floor(Math.random() * 100) + 1;
+      if (randomEvent <= 5) {
+        this.trafficJam();
+      } else if (randomEvent <= 10) {
+        this.stopTrafficJam();
+      } else if (randomEvent <= 15) {
+        this.ghostDriver();
+      } else if (randomEvent <= 20) {
+        this.stopGhostDriver();
+      } else if (randomEvent <= 25) {
+        this.fault();
+      } else if (randomEvent <= 30) {
+        this.sendSingleTrafficData();
+      }
+      if (randomEvent > 50) {
+        this.stopGhostDriver();
+        this.stopTrafficJam();
+        this.stopFault();
+      }
       setTimeout(() => {
         let vehicleNumber = this.randomVehicle();
         if (vehicleNumber <= 50) {
@@ -357,7 +379,7 @@ export class TrafficService {
       speed: Math.random() * (100 - 20) + 20,
       length: Math.random() * (100 - 20) + 20,
     };
-    this.socketClient?.emit('traffic', trafficData);
+    this.socketClient?.emit('singleTrafficData', trafficData);
   }
 
   public getSocketClient(): Socket | null {
