@@ -1,6 +1,6 @@
 export interface BaseData {
-    identifier: string,
-    longitude: number,
-    latitude: number,
-    type: string,
+  identifier: string;
+  longitude: number;
+  latitude: number;
+  type: string;
 }

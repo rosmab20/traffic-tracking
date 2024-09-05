@@ -157,6 +157,27 @@ export class TrafficService {
     this.currentTrafficDataLZD.SONST.averageSpeed = 0;
   }
 
+  private applyTrafficDataCommand(command: {
+    useKZD: boolean;
+    useLZD: boolean;
+    kzdInterval: number | null;
+    lzdInterval: number | null;
+  }) {
+    if (command.useKZD && command.kzdInterval !== null) {
+      this.KZD = command.kzdInterval;
+      this.useKZD = command.useKZD;
+      console.log(`KZD-Intervall auf ${this.KZD} ms gesetzt`);
+    }
+
+    if (command.useLZD && command.lzdInterval !== null) {
+      this.LZD = command.lzdInterval;
+      this.useLZD = command.useLZD;
+      console.log(`LZD-Intervall auf ${this.LZD} ms gesetzt`);
+    }
+
+    this.trafficUpdate();
+  }
+
   private connectToSocketIO() {
     if (!this.socketClient) {
       this.socketClient = io('http://36835.hostserv.eu:3004', {
@@ -173,6 +194,11 @@ export class TrafficService {
 
       this.socketClient.on('connect_error', (error) => {
         console.error('Verbindungsfehler SocketIO:', error);
+      });
+
+      this.socketClient.on('trafficDataCommand', (command) => {
+        console.log('Command empfangen:', command);
+        this.applyTrafficDataCommand(command); // Befehle anwenden
       });
     }
   }

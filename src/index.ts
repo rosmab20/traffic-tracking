@@ -1,7 +1,6 @@
 require('dotenv').config();
 import express from 'express';
 import cors from 'cors';
-import router from '@/routes/routes';
 import cookieParser from 'cookie-parser';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
@@ -18,17 +17,7 @@ const io = new Server(server, {
 app.use(cookieParser());
 app.use(cors());
 
-app.use(express.static('public'));
-app.use('/assets', express.static('public'));
-
-// template view engine
 app.set('view engine', 'ejs');
-
-app.use(express.json());
-
-app.use(express.urlencoded({ extended: true }));
-
-app.use(router);
 
 app.use('*', (_req, res) => {
   res.status(404).json({ status: 404, message: '❌ Route not found!', data: null });
